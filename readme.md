@@ -5,6 +5,5 @@ Can Play against computer that chooses randomly, or
 
 Changes coming up
 >Better detection of draws and wins
->Better presentation of the board
 >changes to the way the game is restarted
 >Better AI opponent

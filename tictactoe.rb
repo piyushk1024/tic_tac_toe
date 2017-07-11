@@ -67,11 +67,11 @@ class TicTacToe #contains all the methods and definitions for the gam
 
   def display #draws the table on the terminal
     puts ""
-    puts "#{@table[0]}|#{@table[1]}|#{@table[2]}"
-    puts "------"
-    puts "#{@table[3]}|#{@table[4]}|#{@table[5]}"
-    puts "------"
-    puts "#{@table[6]}|#{@table[7]}|#{@table[8]}"
+    puts "#{@table[0]}|#{@table[1]}|#{@table[2]}".center(50)
+    puts "------".center(50)
+    puts "#{@table[3]}|#{@table[4]}|#{@table[5]}".center(50)
+    puts "------".center(50)
+    puts "#{@table[6]}|#{@table[7]}|#{@table[8]}".center(50)
     puts ""
   end
 
