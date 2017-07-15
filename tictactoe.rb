@@ -45,10 +45,12 @@ class TicTacToe #contains all the methods and definitions for the gam
     while @status == 0 #implies ongoing game
       if move_no % 2 == 0
         puts "X moves, enter no. between 1-9"
+        scanner(0)
         step(1)
         status(1)
       else
         puts "O moves, enter no. between 1-9" if @gmode == 0 #for O's move, choose between CPU or human input
+        scanner(1)
         step(-1)
         status(-1)
       end
@@ -111,6 +113,30 @@ class TicTacToe #contains all the methods and definitions for the gam
           move_made = true #valid move made, so exit the loop and step method
         end
       end
+    end
+
+  end
+  def scanner(xno)
+    ides = ["X","O"]
+    tt = [2,-2]
+    rows = [0,3,6]
+    rows.each do |x|
+      if @x[x]+@x[x+1]+@x[x+2] == tt[xno]
+        #puts xno,tt[xno],ides[xno],@x.inspect,row
+        puts "#{ides[xno]} can win"
+      end
+    end
+    columns = [0,1,2]
+    columns.each do |x|
+      if @x[x]+@x[x+3]+@x[x+6] == tt[xno]
+        #puts xno,tt[xno],ides[xno],@x.inspect
+        puts "#{ides[xno]} can win"
+      end
+    end
+    #@status = 1 if @x[0]+@x[4]+@x[8] == 3*xno || @x[2]+@x[4]+@x[6] == 3*xno
+    if @x[0]+@x[4]+@x[8] == tt[xno] || @x[2]+@x[4]+@x[6] == tt[xno]
+      #puts xno,tt[xno],ides[xno],@x.inspect
+      puts "#{ides[xno]} can win"
     end
   end
 
